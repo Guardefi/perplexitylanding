@@ -1,0 +1,63 @@
+{
+  "name": "scorpiuscore",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "analyze": "cross-env ANALYZE=true next build",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "startup-check": "node scripts/startup-check.js",
+    "fix-install": "node scripts/fix-installation.js",
+    "clean": "rimraf .next node_modules package-lock.json",
+    "reinstall": "npm run clean && npm install --legacy-peer-deps"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.105.6",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/postprocessing": "^2.16.2",
+    "@stripe/stripe-js": "^3.5.0",
+    "@types/react-countup": "^4.3.0",
+    "autoprefixer": "^10.4.19",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.10",
+    "gsap": "^3.12.5",
+    "next": "14.2.3",
+    "postcss": "^8.4.38",
+    "postprocessing": "^6.37.6",
+    "react": "^18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.4",
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.165.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "overrides": {
+    "three": "^0.165.0"
+  }
+}

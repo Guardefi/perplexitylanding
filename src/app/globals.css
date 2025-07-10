@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --war-room-void: #0a0a0a;
+  --war-room-abyss: #1a1a1a;
+  --war-room-charcoal: #2a2a2a;
+  --war-room-steel: #3a3a3a;
+  
+  --cyber-cyan-dim: #004d4d;
+  --cyber-cyan-base: #008b8b;
+  --cyber-cyan-bright: #00d4d4;
+  --cyber-cyan-intense: #00ffff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--war-room-void);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Cyber Glow Effects */
+.cyber-glow {
+  text-shadow: 0 0 16px #00fff7;
+}
+
+.cyber-glow-intense {
+  text-shadow: 0 0 24px #00fff7, 0 0 48px #00fff7;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Morphism Enhanced */
+.glass-morphism {
+  background: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 255, 247, 0.1);
+}
+
+/* Corner Accents */
+.corner-accents::before,
+.corner-accents::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cyber-cyan-bright);
+}
+
+.corner-accents::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-accents::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* Corner Accent Animation */
+.corner-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.corner-accent::before,
+.corner-accent::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--cyber-cyan-bright);
+  transition: all 0.3s ease;
+}
+
+.corner-accent::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-accent::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.corner-accent:hover::before,
+.corner-accent:hover::after {
+  width: 32px;
+  height: 32px;
+}
+
+/* Cyan Glow Enhanced */
+.cyan-glow {
+  text-shadow: 0 0 20px rgba(0, 255, 247, 0.8),
+               0 0 40px rgba(0, 255, 247, 0.6),
+               0 0 60px rgba(0, 255, 247, 0.4);
+}
+
+/* Button Glow */
+.btn-glow {
+  box-shadow: 0 4px 20px rgba(0, 255, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 8px 30px rgba(0, 255, 247, 0.5);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--war-room-abyss);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-cyan-dim);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-cyan-base);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(0, 255, 247, 0.8);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Perspective helper */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Scroll Section */
+.scroll-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Reduced motion support */
+.reduce-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Liquid morphing blend modes */
+.blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.blend-screen {
+  mix-blend-mode: screen;
+}
+
+/* Glitch effect keyframes */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+.glitch-effect {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+/* Volumetric light glow */
+.volumetric-glow {
+  filter: blur(20px);
+  opacity: 0.5;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Hide default cursor when custom cursor is active */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Loading Screen */
+.loading-screen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.resources-loaded .loading-screen {
+  opacity: 1;
+}
+
+.loading-complete .loading-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Performance optimizations for production */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Critical CSS for above-the-fold content */
+.critical-hero {
+  min-height: 100vh;
+  background: #0a0a0a;
+}
+
+/* Lazy-load optimization markers */
+[data-lazy] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-lazy].loaded {
+  opacity: 1;
+}
